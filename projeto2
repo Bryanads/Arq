@@ -1,30 +1,30 @@
-#define PIN1 2
-#define PIN2 3
-#define PIN3 4
+#define LED1 2
+#define LED2 3
+#define LED3 4
 
 void setup() {
   // put your setup code here, to run once:
-  pinMode(PIN1,OUTPUT);
-  pinMode(PIN2, OUTPUT);
-  pinMode(PIN3, OUTPUT);
+  pinMode(LED1,OUTPUT);
+  pinMode(LED2, OUTPUT);
+  pinMode(LED3, OUTPUT);
 
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  digitalWrite(PIN1, LOW);
-  digitalWrite(PIN2, LOW);
-  digitalWrite(PIN3, HIGH);
+  digitalWrite(LED1, LOW);
+  digitalWrite(LED2, LOW);
+  digitalWrite(LED3, HIGH);
   delay(1000);
 
-  digitalWrite(PIN1, LOW);
-  digitalWrite(PIN2, HIGH);
-  digitalWrite(PIN3, LOW);
+  digitalWrite(LED1, LOW);
+  digitalWrite(LED2, HIGH);
+  digitalWrite(LED3, LOW);
   delay(1000);
 
-  digitalWrite(PIN1, HIGH);
-  digitalWrite(PIN2, LOW);
-  digitalWrite(PIN3, LOW);
+  digitalWrite(LED1, HIGH);
+  digitalWrite(LED2, LOW);
+  digitalWrite(LED3, LOW);
   delay(1000);
 
 }
