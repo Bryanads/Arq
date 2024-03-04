@@ -1,0 +1,30 @@
+#define PIN1 2
+#define PIN2 3
+#define PIN3 4
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(PIN1,OUTPUT);
+  pinMode(PIN2, OUTPUT);
+  pinMode(PIN3, OUTPUT);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  digitalWrite(PIN1, LOW);
+  digitalWrite(PIN2, LOW);
+  digitalWrite(PIN3, HIGH);
+  delay(1000);
+
+  digitalWrite(PIN1, LOW);
+  digitalWrite(PIN2, HIGH);
+  digitalWrite(PIN3, LOW);
+  delay(1000);
+
+  digitalWrite(PIN1, HIGH);
+  digitalWrite(PIN2, LOW);
+  digitalWrite(PIN3, LOW);
+  delay(1000);
+
+}
