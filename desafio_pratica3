@@ -1,0 +1,44 @@
+#define LED1 2
+#define LED2 3
+#define LED3 4
+#define chave1 5
+#define chave2 6
+int val1 = 0;
+int val2 = 0;
+
+
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(LED1,OUTPUT);
+  pinMode(LED2,OUTPUT);
+  pinMode(LED3,OUTPUT);
+
+  pinMode(chave1,INPUT);
+  pinMode(chave2,INPUT);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  val1 = digitalRead(chave1);
+  val2 = digitalRead(chave2);
+
+  digitalWrite(LED1,LOW);
+  digitalWrite(LED2,LOW);
+  digitalWrite(LED3,LOW);
+
+  if ((val1 == 0) && (val2==0))
+    digitalWrite(LED1, HIGH);
+  
+  if ((val1 == 0) && (val2==1))
+    digitalWrite(LED2, HIGH);
+  
+  if ((val1 == 1) && (val2==1))
+    digitalWrite(LED3, HIGH);
+
+  delay(2000);
+  
+  
+
+}
