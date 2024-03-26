@@ -1,0 +1,70 @@
+#define S0 2 // Define a macro para o pino de saída S0
+#define S1 3 // Define a macro para o pino de saída S1
+#define S2 4 // Define a macro para o pino de saída S2
+#define I0 13 // Define a macro para o pino de entrada I0
+#define I1 12 // Define a macro para o pino de entrada I1
+
+void setup() {
+  pinMode(S0, OUTPUT); // Configura os pinos S0, S1 e S2 como saída
+  pinMode(S1, OUTPUT);
+  pinMode(S2, OUTPUT);
+  pinMode(I0, INPUT);
+  pinMode(I1, INPUT);
+}
+
+// Função para reproduzir a primeira melodia
+void musica_a() {
+  tone(S0, 2000, 100); // Gera um tom de 2 kHz no pino S0 por 100 ms
+  delay(2000);
+  tone(S1, 2000, 300); // Gera um tom de 2 kHz no pino S1 por 300 ms
+  delay(2000);
+  tone(S2, 2000, 500); // Gera um tom de 2 kHz no pino S2 por 500 ms
+  delay(2000);
+}
+
+// Função para reproduzir a segunda melodia
+void musica_b() {
+  tone(S0, 200, 100); // Gera um tom de 200 Hz no pino S0 por 100 ms
+  delay(2000);
+  tone(S1, 200, 300); // Gera um tom de 200 Hz no pino S1 por 300 ms
+  delay(2000);
+  tone(S2, 200, 500); // Gera um tom de 200 Hz no pino S2 por 500 ms
+  delay(2000);
+}
+
+// Função para reproduzir a terceira melodia
+void musica_c() {
+  tone(S0, 5000, 100); // Gera um tom de 5 kHz no pino S0 por 100 ms
+  delay(2000);
+  tone(S1, 5000, 300); // Gera um tom de 5 kHz no pino S1 por 300 ms
+  delay(2000);
+  tone(S2, 5000, 500); // Gera um tom de 5 kHz no pino S2 por 500 ms
+  delay(2000);
+}
+
+// Função para reproduzir a quarta melodia
+void musica_d() {
+  tone(S0, 10000, 100); // Gera um tom de 10 kHz no pino S0 por 100 ms
+  delay(2000);
+  tone(S1, 10000, 300); // Gera um tom de 10 kHz no pino S1 por 300 ms
+  delay(2000);
+  tone(S2, 10000, 500); // Gera um tom de 10 kHz no pino S2 por 500 ms
+  delay(2000);
+}
+
+void loop() {
+  int a, b;
+  a = digitalRead(I0); // Lê o estado do pino de entrada I0
+  b = digitalRead(I1); // Lê o estado do pino de entrada I1
+
+  // Verifica as condições e executa a melodia correspondente
+  if (a == 1 && b == 0) {
+    musica_a();
+  } else if (a == 0 && b == 1) {
+    musica_b();
+  } else if (a == 0 && b == 0) {
+    musica_c();
+  } else if (a == 1 && b == 1) {
+    musica_d();
+  }
+}
